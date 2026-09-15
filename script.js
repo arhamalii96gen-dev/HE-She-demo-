@@ -1,65 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const mobileLinks = document.querySelectorAll(".mobile-menu a");
+  /* =========================
+     MOBILE MENU
+  ========================= */
 
-  // Mobile navigation
-  if (menuToggle && mobileMenu) {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("active");
+      navLinks.classList.toggle("open");
     });
 
-    mobileLinks.forEach((link) => {
+    navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
+        navLinks.classList.remove("open");
       });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        navLinks.classList.remove("open");
+      }
     });
   }
 
-  // Close mobile menu with Escape
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      mobileMenu?.classList.remove("active");
-    }
-  });
+  /* =========================
+     LIGHTWEIGHT SCROLL REVEAL
+  ========================= */
 
-  // Reveal sections as they enter the screen
-  const revealItems = document.querySelectorAll(
-    ".intro-grid, .section-heading, .collection-card, .feature-content, .feature-image, .about-grid, .visit-grid"
+  const revealTargets = document.querySelectorAll(
+    ".intro-grid, .section-heading, .collection-card, .feature-content, .about-grid, .visit-grid"
   );
 
-  revealItems.forEach((item) => {
-    item.style.opacity = "0";
-    item.style.transform = "translateY(24px)";
-    item.style.transition =
-      "opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.7,.2,1)";
+  revealTargets.forEach((element) => {
+    element.classList.add("reveal");
   });
 
-  const observer = new IntersectionObserver(
-    (entries, observerInstance) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, observerInstance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-        observerInstance.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.12
-    }
-  );
+          entry.target.classList.add("is-visible");
 
-  revealItems.forEach((item) => observer.observe(item));
+          observerInstance.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
 
-  // Slight stagger for collection cards
-  const cards = document.querySelectorAll(".collection-card");
+    revealTargets.forEach((element) => {
+      observer.observe(element);
+    });
+  } else {
+    revealTargets.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+  }
 
-  cards.forEach((card, index) => {
-    card.style.transitionDelay = `${index * 100}ms`;
-  });
+  /* =========================
+     SMOOTH ANCHOR NAVIGATION
+  ========================= */
 
-  // Smooth anchor navigation fallback
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
@@ -68,14 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const target = document.querySelector(targetId);
 
-      if (target) {
-        event.preventDefault();
+      if (!target) return;
 
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   });
 });
