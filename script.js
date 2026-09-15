@@ -2,140 +2,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
      MOBILE MENU
-  ========================== */
+  ========================= */
 
   const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const navMenu = document.querySelector(".nav-menu");
 
-  if (menuToggle && navLinks) {
+  if (menuToggle && navMenu) {
 
     menuToggle.addEventListener("click", () => {
-
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
-
-      menuToggle.textContent = isOpen ? "×" : "☰";
+      navMenu.classList.toggle("open");
     });
 
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-
+    navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuToggle.textContent = "☰";
+        navMenu.classList.remove("open");
       });
-
     });
 
-
-    document.addEventListener("keydown", (event) => {
-
+    document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
-
-        navLinks.classList.remove("open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuToggle.textContent = "☰";
+        navMenu.classList.remove("open");
       }
-
     });
-
   }
 
 
   /* =========================
-     LIGHTWEIGHT SCROLL REVEAL
-  ========================== */
+     SMOOTH REVEAL
+  ========================= */
 
-  const revealTargets = document.querySelectorAll(
-    ".intro-grid, .section-heading, .collection-card, .feature-content, .about-grid, .visit-grid"
+  const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-card, .reveal-image"
   );
 
-  revealTargets.forEach((element) => {
-    element.classList.add("reveal");
+  const observer = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      });
+
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -50px 0px"
+    }
+  );
+
+  revealElements.forEach(element => {
+    observer.observe(element);
   });
-
-
-  if ("IntersectionObserver" in window) {
-
-    const observer = new IntersectionObserver(
-      (entries, observerInstance) => {
-
-        entries.forEach((entry) => {
-
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add("is-visible");
-
-          observerInstance.unobserve(entry.target);
-
-        });
-
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
-    );
-
-
-    revealTargets.forEach((element) => {
-      observer.observe(element);
-    });
-
-  } else {
-
-    revealTargets.forEach((element) => {
-      element.classList.add("is-visible");
-    });
-
-  }
 
 
   /* =========================
      SMOOTH ANCHOR NAVIGATION
-  ========================== */
+  ========================= */
 
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", event => {
 
       const targetId = link.getAttribute("href");
 
-      if (!targetId || targetId === "#") {
-        return;
-      }
+      if (!targetId || targetId === "#") return;
 
       const target = document.querySelector(targetId);
 
-      if (!target) {
-        return;
-      }
+      if (!target) return;
 
       event.preventDefault();
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+      const headerOffset = 20;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
       });
 
+    });
+
+  });
+
+
+  /* =========================
+     BUTTON ARROW MICRO MOTION
+  ========================= */
+
+  document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("mouseenter", () => {
+      const arrow = button.querySelector("b");
+
+      if (arrow) {
+        arrow.style.transform = "translate(4px, -2px)";
+      }
+    });
+
+    button.addEventListener("mouseleave", () => {
+      const arrow = button.querySelector("b");
+
+      if (arrow) {
+        arrow.style.transform = "";
+      }
     });
 
   });
