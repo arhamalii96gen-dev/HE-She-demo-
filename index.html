@@ -4,284 +4,458 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>He & She Shopping Mall | Islamabad</title>
-  <meta name="description" content="He & She Shopping Mall — fashion for men, women and kids in Islamabad.">
+  <title>HE & SHE — Fashion for Everyone</title>
+
+  <meta
+    name="description"
+    content="HE & SHE — Fashion for everyone. Explore our collection and visit us in Islamabad."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="demo-note">CONCEPT DEMO · SAMPLE COLLECTION</div>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
-    <a href="#" class="logo">HE <span>&</span> SHE</a>
+    <div class="container nav">
 
-    <nav class="desktop-nav">
-      <a href="#collections">Collections</a>
-      <a href="#about">About</a>
-      <a href="#visit">Visit Us</a>
-    </nav>
+      <a href="#top" class="logo">HE & SHE</a>
 
-    <a class="header-whatsapp" href="https://wa.me/923315679173" target="_blank">
-      WhatsApp
-    </a>
+      <nav class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit Us</a>
 
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span>
-      <span></span>
-    </button>
+        <a
+          href="https://wa.me/923315679173"
+          class="nav-whatsapp"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
   </header>
 
-  <div class="mobile-menu">
-    <a href="#collections">Collections</a>
-    <a href="#about">About</a>
-    <a href="#visit">Visit Us</a>
-    <a href="https://wa.me/923315679173" target="_blank">WhatsApp</a>
-  </div>
 
-  <main>
+  <main id="top">
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero">
+
       <div class="hero-image">
-        <img src="hero.jpg" alt="Fashion editorial">
+        <img
+          src="hero.jpg"
+          alt="HE & SHE fashion collection"
+          fetchpriority="high"
+        >
       </div>
 
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <p class="eyebrow">ISLAMABAD · FASHION & STYLE</p>
+        <div class="container">
 
-        <h1>Style that<br><em>feels like you.</em></h1>
+          <span class="eyebrow">Concept Demo · Sample Collection</span>
 
-        <p class="hero-copy">
-          Discover everyday fashion for him, her and the little ones —
-          all in one place.
-        </p>
+          <h1>Style that feels like you.</h1>
 
-        <div class="hero-actions">
-          <a href="#collections" class="button button-light">Explore Collection</a>
-          <a href="#visit" class="text-link">Find the Store <span>↗</span></a>
-        </div>
-      </div>
-
-      <div class="hero-bottom">
-        <span>SCROLL TO EXPLORE</span>
-        <span class="scroll-line"></span>
-      </div>
-    </section>
-
-
-    <!-- INTRO -->
-    <section class="intro">
-      <div class="section-label">01 / THE STORE</div>
-
-      <div class="intro-grid">
-        <h2>One place.<br><em>Every style.</em></h2>
-
-        <div class="intro-text">
           <p>
-            From everyday essentials to looks worth stepping out in,
-            He & She Shopping Mall brings fashion for the whole family
-            together.
+            Contemporary fashion for him, her and the little ones —
+            all in one place.
           </p>
 
-          <a href="#about" class="arrow-link">
-            Discover more <span>→</span>
-          </a>
+          <div class="hero-actions">
+
+            <a href="#collections" class="btn btn-primary">
+              Explore Collection
+              <span class="btn-arrow">↗</span>
+            </a>
+
+            <a href="#visit" class="btn btn-secondary">
+              Find the Store
+              <span class="btn-arrow">↗</span>
+            </a>
+
+          </div>
+
         </div>
       </div>
+
     </section>
 
 
-    <!-- COLLECTIONS -->
-    <section class="collections" id="collections">
-      <div class="section-heading">
-        <div>
-          <div class="section-label">02 / COLLECTIONS</div>
-          <h2>Find your <em>look.</em></h2>
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="section intro">
+      <div class="container">
+
+        <div class="intro-grid">
+
+          <div>
+            <span class="eyebrow">HE & SHE</span>
+
+            <h2>
+              One place.<br>
+              Every style.
+            </h2>
+          </div>
+
+          <div>
+            <p>
+              Discover everyday essentials, modern looks and timeless
+              pieces for the whole family.
+            </p>
+          </div>
+
         </div>
-
-        <p>
-          A glimpse of the styles you can explore in-store.
-        </p>
-      </div>
-
-      <div class="collection-grid">
-
-        <article class="collection-card large">
-          <img src="product-1.jpg" alt="Men's fashion">
-
-          <div class="card-content">
-            <span>01</span>
-            <h3>For Him</h3>
-            <a href="#visit">Explore <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="collection-card">
-          <img src="product-2.jpg" alt="Women's fashion">
-
-          <div class="card-content">
-            <span>02</span>
-            <h3>For Her</h3>
-            <a href="#visit">Explore <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="collection-card">
-          <img src="product-3.jpg" alt="Fashion collection">
-
-          <div class="card-content">
-            <span>03</span>
-            <h3>Kids</h3>
-            <a href="#visit">Explore <span>↗</span></a>
-          </div>
-        </article>
 
       </div>
     </section>
 
 
-    <!-- FEATURE -->
+    <!-- =========================
+         COLLECTIONS
+    ========================== -->
+
+    <section class="section collections" id="collections">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Our Collection</span>
+            <h2>Find your look.</h2>
+          </div>
+
+          <p>
+            A curated selection of styles designed for every member
+            of the family.
+          </p>
+
+        </div>
+
+
+        <div class="collection-grid">
+
+          <!-- FOR HIM -->
+
+          <article class="collection-card">
+
+            <div class="collection-image">
+              <img
+                src="product-1.jpg"
+                alt="Men's fashion"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <div class="collection-content">
+
+              <span>01 · For Him</span>
+
+              <h3>For Him</h3>
+
+              <p>
+                Effortless everyday style with a modern edge.
+              </p>
+
+              <span class="collection-link">
+                Explore <b>↗</b>
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- FOR HER -->
+
+          <article class="collection-card">
+
+            <div class="collection-image">
+              <img
+                src="product-2.jpg"
+                alt="Women's fashion"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <div class="collection-content">
+
+              <span>02 · For Her</span>
+
+              <h3>For Her</h3>
+
+              <p>
+                Elegant pieces made for every moment.
+              </p>
+
+              <span class="collection-link">
+                Explore <b>↗</b>
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- KIDS -->
+
+          <article class="collection-card">
+
+            <div class="collection-image">
+              <img
+                src="product-3.jpg"
+                alt="Kids fashion"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <div class="collection-content">
+
+              <span>03 · For Kids</span>
+
+              <h3>For Kids</h3>
+
+              <p>
+                Comfortable styles made for little personalities.
+              </p>
+
+              <span class="collection-link">
+                Explore <b>↗</b>
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         FEATURE
+    ========================== -->
+
     <section class="feature">
+      <div class="container">
 
-      <div class="feature-image">
-        <img src="product-4.jpg" alt="Fashion style">
-      </div>
+        <div class="feature-grid">
 
-      <div class="feature-content">
-        <div class="section-label">03 / EVERYDAY STYLE</div>
+          <div class="feature-content">
 
-        <h2>Good clothes.<br><em>Good feeling.</em></h2>
+            <span class="eyebrow">The HE & SHE Experience</span>
 
-        <p>
-          Fashion doesn't need to be complicated. Find pieces that fit
-          your day, your mood and your own way of wearing them.
-        </p>
+            <h2>
+              Good clothes.<br>
+              Good feeling.
+            </h2>
 
-        <a href="https://wa.me/923315679173"
-           target="_blank"
-           class="button button-dark">
-          Ask on WhatsApp
-        </a>
-      </div>
+            <p>
+              Find pieces that fit your everyday life — thoughtfully
+              selected styles for the people who matter most.
+            </p>
 
-    </section>
+            <a
+              href="https://wa.me/923315679173"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Talk to Us
+              <span class="btn-arrow">↗</span>
+            </a>
+
+          </div>
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+          <div class="feature-image">
 
-      <div class="section-label">04 / ABOUT</div>
+            <img
+              src="product-4.jpg"
+              alt="HE & SHE clothing collection"
+              loading="lazy"
+              decoding="async"
+            >
 
-      <div class="about-grid">
-
-        <h2>Fashion for<br><em>everyone.</em></h2>
-
-        <div>
-
-          <p class="about-lead">
-            Looking for something for yourself — or shopping for the
-            whole family?
-          </p>
-
-          <p>
-            He & She Shopping Mall is a local fashion destination in
-            Islamabad, bringing together clothing choices for men,
-            women and kids under one roof.
-          </p>
-
-          <a href="#visit" class="arrow-link">
-            Plan your visit <span>→</span>
-          </a>
+          </div>
 
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- VISIT -->
-    <section class="visit" id="visit">
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-      <div class="visit-inner">
+    <section class="section about" id="about">
+      <div class="container">
 
-        <div class="section-label">05 / VISIT</div>
+        <div class="about-grid">
 
-        <h2>Come say <em>hello.</em></h2>
+          <div>
+            <span class="eyebrow">About Us</span>
+
+            <h2>
+              Fashion<br>
+              for everyone.
+            </h2>
+          </div>
+
+          <div class="about-copy">
+
+            <p>
+              HE & SHE is a family-focused fashion destination,
+              bringing together styles for men, women and children.
+            </p>
+
+            <p>
+              From everyday essentials to pieces that stand out,
+              our goal is simple — make finding your style easy.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         VISIT
+    ========================== -->
+
+    <section class="section visit" id="visit">
+      <div class="container">
 
         <div class="visit-grid">
 
-          <div class="visit-item">
-            <span>LOCATION</span>
+          <div>
 
-            <p>
-              Mughal Market, Service Rd W,<br>
-              I-8/1, Islamabad
-            </p>
+            <span class="eyebrow">Visit Us</span>
+
+            <h2>
+              Come find<br>
+              your style.
+            </h2>
+
           </div>
 
 
-          <div class="visit-item">
-            <span>HOURS</span>
+          <div class="visit-details">
 
-            <p>
-              Daily<br>
-              11:00 AM — 11:00 PM
-            </p>
-          </div>
+            <div class="detail">
+              <span>Location</span>
+
+              <strong>
+                Mughal Market, Service Rd W,<br>
+                I-8/1, Islamabad
+              </strong>
+            </div>
 
 
-          <div class="visit-item">
-            <span>CONTACT</span>
+            <div class="detail">
+              <span>Opening Hours</span>
 
-            <p>
-              <a href="tel:+923315679173">
+              <strong>
+                Daily · 11 AM — 11 PM
+              </strong>
+            </div>
+
+
+            <div class="detail">
+              <span>Contact</span>
+
+              <strong>
                 +92 331 5679173
-              </a>
-              <br>
+              </strong>
+            </div>
 
-              <a href="https://wa.me/923315679173" target="_blank">
-                WhatsApp us
+
+            <div class="visit-actions">
+
+              <a
+                href="https://wa.me/923315679173"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp Us
+                <span class="btn-arrow">↗</span>
               </a>
-            </p>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=He+%26+She+Shopping+Mall+I-8%2F1+Islamabad"
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener"
+              >
+                Google Maps
+                <span class="btn-arrow">↗</span>
+              </a>
+
+            </div>
+
           </div>
-
-        </div>
-
-
-        <div class="visit-actions">
-
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=He%20%26%20She%20Shopping%20Mall%20I-8%2F1%20Islamabad"
-            target="_blank"
-            class="button button-light">
-            Open in Google Maps
-          </a>
 
         </div>
 
       </div>
-
     </section>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+    <div class="container footer-inner">
 
-    <div class="footer-logo">
-      HE <span>&</span> SHE
+      <div class="logo">HE & SHE</div>
+
+      <p>
+        Concept website demo · Islamabad
+      </p>
+
     </div>
-
-    <div class="footer-right">
-      <span>ISLAMABAD · PAKISTAN</span>
-      <span>© 2026</span>
-    </div>
-
   </footer>
 
 
