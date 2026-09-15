@@ -46,8 +46,15 @@
 
     <!-- HERO -->
     <section class="hero">
+
       <div class="hero-image">
-        <img src="hero.jpg" alt="HE & SHE fashion collection">
+        <picture>
+          <!-- Mobile -->
+          <source media="(max-width: 850px)" srcset="hero-mobile.jpg">
+
+          <!-- Desktop / PC -->
+          <img src="hero.jpg" alt="HE & SHE fashion collection">
+        </picture>
       </div>
 
       <div class="hero-overlay"></div>
